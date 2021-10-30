@@ -1,6 +1,9 @@
+import 'dotenv/config';
 import * as path from "path";
 import express from "express";
 const app = express();
+
+console.log(`My secret is ${process.env.MY_SECRET}`);
 
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
